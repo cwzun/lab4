@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 4a Q2</title>
+    </head>
+    <body>
+        <label for="userInput">Enter a number:</label>
+        <input type="text" id="userInput" placeholder="Enter a number">
+        <button id="checkBtn" type="button">Check</button>
+        <p id="result" role="status" aria-live="polite"></p>
+
+    </body>
+    <script>
+        document.getElementById("checkBtn").addEventListener("click", validation);
+
+        function validation() {
+            let text = document.getElementById("userInput").value;
+            let resulttt = document.getElementById("result");
+            if (!text.trim() || isNaN(text)) {
+                resulttt.textContent = "Please enter a valid number!";
+            } else {
+                if (Number(text)>10) {
+                    resulttt.textContent = "The number is higher than 10";
+                } else if (Number(text)<10) {
+                    resulttt.textContent = "The number is lower than 10";
+                } else {
+                    resulttt.textContent = "The number is equal to 10";
+                }
+            }
+        }
+
+        function isNumber() {
+            return isNaN();
+        }
+    </script>
+</html>
